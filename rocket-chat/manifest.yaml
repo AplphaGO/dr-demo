@@ -1,10 +1,4 @@
 ---
-kind: ProjectRequest
-apiVersion: v1
-metadata:
-  name: rocket-chat
-
----
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
@@ -44,7 +38,7 @@ spec:
   selector:
     app: rocketchat
 ---
-apiVersion: v1
+apiVersion: apps.openshift.io/v1
 kind: DeploymentConfig
 metadata:
   name: rocketchat-db
@@ -81,7 +75,7 @@ spec:
           persistentVolumeClaim:
             claimName: rocketchat-data-claim
 ---
-apiVersion: v1
+apiVersion: apps.openshift.io/v1
 kind: DeploymentConfig
 metadata:
   name: rocketchat
