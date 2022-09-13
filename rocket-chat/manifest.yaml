@@ -74,7 +74,7 @@ spec:
               command:
                   - /bin/sh
                   - -c
-                  - "mongo rocket-chat-db:27017 --eval \"rs.initiate({_id: 'rs0', members: [{_id:0, host:'localhost:27017'}]})\""
+                  - "mongo --eval \"rs.initiate({_id: 'rs0', members: [{_id:0, host:'localhost:27017'}]})\""
             initialDelaySeconds: 30
             periodSeconds: 2
             timeoutSeconds: 1
