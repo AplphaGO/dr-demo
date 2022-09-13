@@ -69,6 +69,13 @@ spec:
           ports:
             - containerPort: 27017
               protocol: TCP
+        lifecycle:
+          postStart:
+            exec:
+              command:
+                - /bin/sh
+                - -c
+                - "sleep 60 && mongo rocket-chat-db:27017 --eval \"rs.initiate({_id: 'rs0', members: [{_id:0, host:'localhost:27017'}]})\""
       restartPolicy: Always
       volumes:
         - name: rocketchat-data-vol

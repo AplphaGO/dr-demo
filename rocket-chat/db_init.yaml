@@ -1,0 +1,26 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: init-mongo
+  namespace: rocket-chat
+spec:
+  template:
+    spec:
+      containers:
+      - name: enable-odf-plugin
+        command:
+            - /bin/bash
+            - -c
+            - |
+              echo "Initialize db"
+              mongo rocket-chat-db:27017 --eval "rs.initiate({_id: 'rs0', members: [ {_id:0, host:'localhost:27017'}]})"
+              if [ $? = 0 ]
+              then
+                  echo "ODF console enabled, patch was applied ok"
+              else
+                  echo "Failed to patch console"
+              fi
+        image: registry.redhat.io/openshift4/ose-cli:v4.7
+      serviceAccount: openshift-gitops-argocd-application-controller
+      serviceAccountName: openshift-gitops-argocd-application-controller
+      restartPolicy: Never

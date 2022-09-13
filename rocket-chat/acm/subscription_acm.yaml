@@ -1,0 +1,42 @@
+apiVersion: app.k8s.io/v1beta1
+kind: Application
+metadata:
+  name: rocketchat
+  namespace: rocketchat
+spec:
+  componentKinds:
+    - group: apps.open-cluster-management.io
+      kind: Subscription
+  descriptor: {}
+  selector:
+    matchExpressions:
+      - key: app
+        operator: In
+        values:
+          - rocketchat
+---
+apiVersion: apps.open-cluster-management.io/v1
+kind: Subscription
+metadata:
+  name: rocketchat-subscription-1
+  namespace: rocketchat
+spec:
+  channel: ggithubcom-likid0-dr-demo-ns/ggithubcom-likid0-dr-demo
+  placement:
+    placementRef:
+      name: rocketchat-placement-1
+      kind: PlacementRule
+posthooks: {}
+prehooks: {}
+---
+apiVersion: apps.open-cluster-management.io/v1
+kind: PlacementRule
+metadata:
+  name: rocketchat-placement-1
+  namespace: rocketchat
+  labels:
+    app: rocketchat
+spec:
+  clusterSelector:
+    matchLabels:
+      name: cluster1
