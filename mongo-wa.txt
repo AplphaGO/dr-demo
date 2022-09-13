@@ -1,1 +1,8 @@
 mongo rocket-chat-db:27017 --eval "rs.initiate({_id: 'rs0', members: [ {_id:0, host:'localhost:27017'}]})"
+
+
+use rocketchat
+db.rocketchat_message.find()
+
+
+oc exec -it $(oc get pods -l app=rocketchat-db --no-headers=true | awk '{print $1}') -- mongo rocketchat --eval '(db.rocketchat_message.find())'

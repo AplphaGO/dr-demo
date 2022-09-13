@@ -1,0 +1,14 @@
+---
+apiVersion: apps.open-cluster-management.io/v1
+kind: PlacementRule
+metadata:
+  labels:
+    app: rocketchat
+  name: rocketchat-placement
+  namespace: rocketchat
+spec:
+  clusterConditions:
+  - status: "True"
+    type: ManagedClusterConditionAvailable
+  clusterReplicas: 1
+  schedulerName: ramen
