@@ -8,7 +8,7 @@ metadata:
   namespace: rocketchat
 spec:
   drPolicyRef:
-    name: drsync
+    name: drsync2m
   placementRef:
     kind: PlacementRule
     name: rocketchat-placement
