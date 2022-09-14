@@ -1,8 +1,8 @@
 #!/bin/bash
 SITE1=cluster1
 SITE2=cluster2
-HOOK1=http://rocket-chat-rocketchat.apps.bos2.chris.ocs.ninja/hooks/7LiiXS7EEF5id8TGS/vFHQpzEoKFdfAuock2S7zN5vZXccnwwzXFHB8JjsxnubZCbK
-HOOK2=http://rocket-chat-rocketchat.apps.bos3.chris.ocs.ninja/hooks/7LiiXS7EEF5id8TGS/vFHQpzEoKFdfAuock2S7zN5vZXccnwwzXFHB8JjsxnubZCbK
+HOOK1=http://rocket-chat-rocketchat.apps.bos2.chris.ocs.ninja/hooks/E3smq5F8ZJ8hcqchj/64GkK2WFbfonwKBGrr5XbXXJcj2dCbkNQ7HwmoHhKhAzaduK
+HOOK2=http://rocket-chat-rocketchat.apps.bos3.chris.ocs.ninja/hooks/E3smq5F8ZJ8hcqchj/64GkK2WFbfonwKBGrr5XbXXJcj2dCbkNQ7HwmoHhKhAzaduK
 TIME=10
 export NUMBER=1 
 while true ; do 
