@@ -4,6 +4,8 @@ kind: PersistentVolumeClaim
 metadata:
   name: rocketchat-data-claim
   namespace: rocket-chat
+labels:
+  placement: rocketchat-placement-1
 spec:
   accessModes:
     - ReadWriteOnce
