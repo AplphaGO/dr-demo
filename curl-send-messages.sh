@@ -1,7 +1,7 @@
 #!/bin/bash
 SITE1=cluster1
 SITE2=cluster2
-TOKEN='P2GamgKTj3c2jeQHx/nWZifLGABLF2FNNjcJRLsdAdcAdnbBEmhiogeQusHKfcJSyi'
+TOKEN='zGdcMCrSLt6ueZQdc/Kbrr6jKgLMcPT8NkBmqKy4GF8YPWzDG5frFNKjgSoQRy4HFr'
 HOOK1=http://rocket-chat-rocketchat.apps.bos2.chris.ocs.ninja/hooks/${TOKEN}
 HOOK2=http://rocket-chat-rocketchat.apps.bos3.chris.ocs.ninja/hooks/${TOKEN}
 TIME=10
@@ -13,7 +13,6 @@ while true ; do
   if  curl -I ${HOOK1}  > /dev/null 2>&1
   then
         if [ $(curl -I ${HOOK1} 2>/dev/null | head -n 1 | cut -d ' '  -f2 ) -eq "200" ]
-#  if [ $(curl -I ${HOOK1} 2>/dev/null | head -n 1 | cut -d ' '  -f2 ) -eq "200" && curl -I ${HOOK1} 2>/dev/null ]
         then
         curl -X POST -H 'Content-Type: application/json' --data '{"username": "CLUSTER1","icon_emoji": ":alien:","text":"Sending Message to test MetroDR Demo. '" $(date)"'","attachments":[{"title":"'"Site: ${SITE1}"'","text":"'"DR message ${NUMBER1}"'","color":"#0ff004"}]}' ${HOOK1}
         export NUMBER1=$((NUMBER1+1))
