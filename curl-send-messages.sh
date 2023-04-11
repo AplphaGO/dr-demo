@@ -1,9 +1,9 @@
 #!/bin/bash
 SITE1=cluster1
 SITE2=cluster2
-TOKEN='zGdcMCrSLt6ueZQdc/Kbrr6jKgLMcPT8NkBmqKy4GF8YPWzDG5frFNKjgSoQRy4HFr'
-HOOK1=http://rocket-chat-rocketchat.apps.bos2.chris.ocs.ninja/hooks/${TOKEN}
-HOOK2=http://rocket-chat-rocketchat.apps.bos3.chris.ocs.ninja/hooks/${TOKEN}
+TOKEN='ECcYej4SX5bRJEgfS/8E4p8d2X7oKi9KYmfuEDzqhPF5hvfFBPfRfMMtMYHgeHEjDR'
+HOOK1=http://rocket-chat-rocketchat.apps.bos2.vmw.ibmfusion.eu/hooks/${TOKEN}
+HOOK2=http://rocket-chat-rocketchat.apps.bos3.vmw.ibmfusion.eu/hooks/${TOKEN}
 TIME=10
 export NUMBER1=0 
 export NUMBER2=0 

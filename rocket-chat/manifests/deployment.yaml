@@ -12,7 +12,7 @@ spec:
   resources:
     requests:
       storage: 10Gi
-  storageClassName: ocs-external-storagecluster-ceph-rbd
+  storageClassName: ceph-rbd
 ---
 apiVersion: v1
 kind: Service
