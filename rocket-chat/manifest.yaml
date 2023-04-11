@@ -5,6 +5,7 @@ metadata:
   name: rocketchat-data-claim
   namespace: rocket-chat
   labels:
+    app: rocketchat
     placement: rocketchat-placement-1
 spec:
   accessModes:
@@ -12,7 +13,7 @@ spec:
   resources:
     requests:
       storage: 10Gi
-  storageClassName: ocs-external-storagecluster-ceph-rbd
+  storageClassName: ceph-rbd
 ---
 apiVersion: v1
 kind: Service
