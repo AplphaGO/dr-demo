@@ -13,6 +13,6 @@ spec:
     kind: PlacementRule
     name: rocketchat-placement
     namespace: rocketchat
-  preferredCluster: cluster1
+  preferredCluster: spoke1
   pvcSelector: {}
 

@@ -1,5 +1,7 @@
 ---
-kind: ProjectRequest
 apiVersion: v1
+kind: Namespace
 metadata:
+  annotations: {}
   name: rocket-chat
+spec: {}
