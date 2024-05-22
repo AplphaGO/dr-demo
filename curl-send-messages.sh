@@ -1,9 +1,9 @@
 #!/bin/bash
 SITE1=spoke1
 SITE2=spoke4
-TOKEN='zGdcMCrSLt6ueZQdc/Kbrr6jKgLMcPT8NkBmqKy4GF8YPWzDG5frFNKjgSoQRy4HFr'
-HOOK1=http://rocket-chat-rocketchat.apps.bos2.chris.ocs.ninja/hooks/${TOKEN}
-HOOK2=http://rocket-chat-rocketchat.apps.bos3.chris.ocs.ninja/hooks/${TOKEN}
+TOKEN='B3yEoTMBiE9SszK43/WkYJWpzTy9fcta9GjXjGr9NMpMnxqK2h8CtAHYQSexwtJXw7'
+HOOK1=http://rocket-chat-rocketchat.apps.spoke1.lab.local/hooks/${TOKEN}
+HOOK2=http://rocket-chat-rocketchat.apps.spoke4.lab.local/hooks/${TOKEN}
 TIME=10
 export NUMBER1=0 
 export NUMBER2=0 
