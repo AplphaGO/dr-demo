@@ -83,6 +83,8 @@ spec:
             successThreshold: 3
             failureThreshold: 10
       restartPolicy: Always
+      securityContext: 
+         runAsUser: 1000750000
       volumes:
         - name: rocketchat-data-vol
           persistentVolumeClaim:

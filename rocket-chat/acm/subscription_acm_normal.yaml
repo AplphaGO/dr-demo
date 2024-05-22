@@ -19,28 +19,35 @@ apiVersion: apps.open-cluster-management.io/v1
 kind: Subscription
 metadata:
   annotations:
-    apps.open-cluster-management.io/git-branch: main
-    apps.open-cluster-management.io/git-path: rocket-chat
+    apps.open-cluster-management.io/git-branch: metrodr
+    apps.open-cluster-management.io/git-path: rocket-chat/manifests
     apps.open-cluster-management.io/reconcile-option: merge
   labels:
     app: rocketchat
   name: rocketchat-subscription-1
   namespace: rocketchat
 spec:
-  channel: ggithubcom-likid0-dr-demo-ns/ggithubcom-likid0-dr-demo
+  channel: ggithubcom-aplphago-dr-demo-ns/ggithubcom-aplphago-dr-demo
   placement:
     placementRef:
-      kind: PlacementRule
+      kind: Placement
       name: rocketchat-placement-1
 ---
-apiVersion: apps.open-cluster-management.io/v1
-kind: PlacementRule
+apiVersion: cluster.open-cluster-management.io/v1beta1
+kind: Placement
 metadata:
   labels:
     app: rocketchat
   name: rocketchat-placement-1
   namespace: rocketchat
 spec:
-  clusterSelector:
-    matchLabels:
-      'name': 'spoke1'
+  predicates:
+    - requiredClusterSelector:
+        labelSelector:
+          matchExpressions:
+            - key: 'name'
+              operator: 'In'
+              values: 
+                - 'spoke1'
+  clusterSets:
+    - global

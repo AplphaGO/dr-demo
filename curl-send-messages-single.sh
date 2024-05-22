@@ -1,10 +1,10 @@
 #!/bin/bash
 SITE1=spoke1
-SITE2=spoke4
-TOKEN='B3yEoTMBiE9SszK43/WkYJWpzTy9fcta9GjXjGr9NMpMnxqK2h8CtAHYQSexwtJXw7'
+SITE2=local-cluster
+TOKEN='vmPLt5tJtrG92QnHh/TAYdroaTYvDYY3ZcfcxuzmECvAcThExoHY7uZPSGrZArA6T2'
 HOOK1=http://rocket-chat-rocketchat.apps.spoke1.lab.local/hooks/${TOKEN}
-HOOK2=http://rocket-chat-rocketchat.apps.spoke4.lab.local/hooks/${TOKEN}
-TIME=10
+HOOK2=http://rocket-chat-rocketchat.apps.hub.lab.local/hooks/${TOKEN}
+TIME=3
 export NUMBER=0 
 while true ; do 
   sleep $TIME
